@@ -1,0 +1,166 @@
+.mytable {
+    float: left;
+    border-spacing: 0;
+    position: relative;
+    overflow-x: visible;
+    display: inline-table;
+}
+
+th {
+    position: sticky;
+    top: 0;
+}
+
+.mytable tr td, th {
+    height: 40px;
+    text-align: center;
+    background-color: #EBECF0;
+    border-color: white;
+    width: 60px;
+    border-width: 3px 1px 3px 1px;
+    border-style: solid;
+}
+/* Makes table's border different vertically, doesn't look as good as i'd hoped
+.mytable tr td:nth-child(odd) {
+    border-color: #d3d3d3 white #d3d3d3 white;
+}
+
+.mytable tr td:nth-child(even) {
+    border-color: #BEBEBE white #BEBEBE white;
+}
+*/
+
+.mytable tr:nth-child(odd) td { /* makes default background color different for uhhhhhhhhhhhhhh errrrrrrrrrrrr each row */
+    background-color: #EBECF0;
+}
+
+.mytable tr:nth-child(even) td {
+    background-color: #BEBEBE;
+}
+
+.mytable tr:first-child {
+    height: 70px;
+    position: static;
+}
+
+.mytable tr:first-child {
+    border-radius: 16px 16px 0 0 !important;
+}
+
+#charTable tr td {
+    border-radius: 16px 0 0 16px;
+}
+
+#bannerTable {
+    overflow-x: scroll;
+    max-width: 93vw;
+}
+
+#bannerTable tr td:last-child {
+    border-radius: 0 16px 16px 0;
+}
+
+.lastThing {
+    border-radius: 0 16px 16px 0;
+}
+
+.z0 { /* There might be a better way of doing this, lmao. */ 
+    background-color: hsl(120, 100%, 50%) !important;
+    border-radius: 16px 0 0 16px;
+}
+
+#bannerTable tr td:last-child.z0 {
+    border-radius: 16px !important;
+}
+
+.z1 {
+    background-color: hsl(85, 100%, 50%) !important;
+}
+
+.z2 {
+    background-color: hsl(75, 100%, 50%) !important;
+}
+
+.z3 {
+    background-color: hsl(70, 100%, 50%) !important;
+}
+
+.z4 {
+    background-color: hsl(65, 100%, 50%) !important;
+}
+
+.z5 {
+    background-color: hsl(60, 100%, 50%) !important;
+}
+
+.z6 {
+    background-color: hsl(55, 100%, 50%) !important;
+}
+
+.z7 {
+    background-color: hsl(50, 100%, 50%) !important;
+}
+
+.z8 {
+    background-color: hsl(45, 100%, 50%) !important;
+}
+
+.z9 {
+    background-color: hsl(40, 100%, 50%) !important;
+}
+
+.z10 {
+    background-color: hsl(35, 100%, 50%) !important;
+}
+
+.z11 {
+    background-color: hsl(30, 100%, 50%) !important;
+}
+
+.z12 {
+    background-color: hsl(27, 100%, 50%) !important;
+}
+
+.z13 {
+    background-color: hsl(25, 100%, 50%) !important;
+}
+
+.z14 {
+    background-color: hsl(23, 100%, 50%) !important;
+}
+
+.z15 {
+    background-color: hsl(21, 100%, 50%) !important;
+}
+
+.z16 {
+    background-color: hsl(17, 100%, 50%) !important;
+}
+
+.z17 {
+    background-color: hsl(15, 100%, 50%) !important;
+}
+
+.z18 {
+    background-color: hsl(12, 100%, 50%) !important;
+}
+
+.z19 {
+    background-color: hsl(10, 100%, 50%) !important;
+}
+
+.z20 {
+    background-color: hsl(7, 100%, 50%) !important;
+}
+
+.z21 {
+    background-color: hsl(5, 100%, 50%) !important;
+}
+
+.z22 {
+    background-color: hsl(2, 100%, 50%) !important;
+}
+
+.z22 {
+    background-color: hsl(0, 100%, 50%) !important;
+}
