@@ -10,8 +10,8 @@ characters = [
 char5Star = [
     "Albedo", "Itto", "Eula", "Ganyu", "Hu Tao",
     "Kazuha", "Ayaka", "Keqing", "Klee",
-    "Shogun", "Kokomi", "Tartaglia", "Venti", "Xiao",
-    "Yoimiya", "Zhongli",
+    "Shenhe", "Shogun", "Kokomi", "Tartaglia", "Venti",
+    "Xiao", "Yoimiya", "Zhongli",
 ]
 
 char4Star = [
@@ -20,7 +20,7 @@ char4Star = [
     "Diona", "Fischl", "Gorou", "Sara", "Ningguang",
     "Noelle", // <3
     "Razor", "Rosaria", "Sayu", "Sucrose", "Thoma", "Xiangling",
-    "Xingqiu", "Xinyan", "Yanfei"
+    "Xingqiu", "Xinyan", "Yanfei", "Yunjin"
 ]
 
 characters = characters.concat(char5Star);
@@ -28,7 +28,8 @@ characters = characters.concat(char4Star)
 
 bannerNames = [ // I do not care about the actual names, noone knows them
     "Venti 1","Klee 1","Tartaglia 1","Zhongli 1","Albedo 1","Ganyu 1","Xiao 1","Keqing","Hu Tao 1","Venti 2","Tartaglia 2","Zhongli 2",
-    "Eula 1","Klee 2","Kazuha 1","Ayaka 1","Yoimiya 1","Shogun 1","Kokomi 1","Tartaglia 3","Hu Tao 2","Albedo 2 & Eula 2","Itto 1"
+    "Eula 1","Klee 2","Kazuha 1","Ayaka 1","Yoimiya 1","Shogun 1","Kokomi 1","Tartaglia 3","Hu Tao 2","Albedo 2 & Eula 2","Itto 1",
+    "Shenhe 1 & Xiao 2", "Zhongli 3 & Ganyu 2"
 ]
 
 banners = [
@@ -159,7 +160,7 @@ banners = [
         "Thoma"
     ],
     [ // 21
-        "Albedo","Eula",
+        "Albedo", "Eula",
         "Noelle",
         "Rosaria",
         "Bennett"
@@ -169,6 +170,13 @@ banners = [
         "Gorou",
         "Barbara",
         "Xiangling"
+    ],
+    [ // 23
+        "Shenhe", "Xiao",
+        "Yunjin"
+    ],
+    [ // 24
+        "Zhongli", "Ganyu"
     ]
 ]
 
@@ -235,7 +243,7 @@ for (ii in banners) {
 
         // i > 16 is all 4 star characters, if a 5 star is added add one
         // ii is banner number
-        if (ii > 22 && i > 16 && character != "t") { // CHANGE WHEN CHARACTERS FOR next wishes are revealed please
+        if (ii > 22 && i > 17 && character != "Yunjin") { // CHANGE WHEN CHARACTERS FOR next wishes are revealed please
             td.innerText = "?"
             td.className = ""
         }
