@@ -178,7 +178,10 @@ banners = [
         "Chongyun"
     ],
     [ // 24
-        "Zhongli", "Ganyu"
+        "Zhongli", "Ganyu",
+        "Xingqiu",
+        "Beidou",
+        "Yanfei"
     ]
 ]
 
@@ -245,7 +248,7 @@ for (ii in banners) {
 
         // i > 16 is all 4 star characters, if a 5 star is added add one
         // ii is banner number
-        if (ii > 23 && i > 17 && character != "g") { // CHANGE WHEN CHARACTERS FOR next wishes are revealed please
+        if (ii > 24 && i > 17 && character != "g") { // CHANGE WHEN CHARACTERS FOR next wishes are revealed please
             td.innerText = "?"
             td.className = ""
         }
