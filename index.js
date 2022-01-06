@@ -1,7 +1,4 @@
-// every single one of my fucking projects i keep the same code that i started with even though it FUCKING SUCKS
-
-// but i can't be bothered to redo it so.....
-
+// Satan possesses those who read this. Beware.
 
 characters = [
     "",
@@ -20,7 +17,7 @@ char4Star = [
     "Diona", "Fischl", "Gorou", "Sara", "Ningguang",
     "Noelle", // <3
     "Razor", "Rosaria", "Sayu", "Sucrose", "Thoma", "Xiangling",
-    "Xingqiu", "Xinyan", "Yanfei", "Yunjin"
+    "Xingqiu", "Xinyan", "Yanfei", "Yun Jin"
 ]
 
 characters = characters.concat(char5Star);
@@ -173,7 +170,7 @@ banners = [
     ],
     [ // 23
         "Shenhe", "Xiao",
-        "Yunjin",
+        "Yun Jin",
         "Ningguang",
         "Chongyun"
     ],
@@ -277,5 +274,13 @@ function goThroughAllTheChars(fives=true) { // poor way of doing this :)
     }
 }
 
+
+window.addEventListener("scroll",function() {
+    ctable.style.left = window.scrollX + "px";
+})
+
+table.style.left = ctable.getBoundingClientRect().width;
+
+window.scrollTo(window.scrollMaxX,0);
 goThroughAllTheChars(true);
 goThroughAllTheChars(false);

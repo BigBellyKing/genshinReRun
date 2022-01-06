@@ -1,14 +1,36 @@
 .mytable {
-    float: left;
     border-spacing: 0;
     position: relative;
     overflow-x: visible;
     display: inline-table;
+    padding-bottom: 30px;
 }
 
 th {
     position: sticky;
     top: 0;
+    height: 70px;
+    max-height: 70px;
+    width: 40px;
+    overflow: hidden;
+}
+
+#charTable {
+    position: absolute;
+    transition: 100ms;
+    left: 0;top: 0;
+    z-index: 1000;
+    background-color: white;
+}
+
+#charTable th {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#bannerTable {
+    position: absolute;
+    top: 0;left: 4vw;
 }
 
 .mytable tr td, th {
@@ -16,21 +38,12 @@ th {
     text-align: center;
     background-color: #EBECF0;
     border-color: white;
-    width: 60px;
+    min-width: 60px;
     border-width: 3px 1px 3px 1px;
     border-style: solid;
 }
-/* Makes table's border different vertically, doesn't look as good as i'd hoped
-.mytable tr td:nth-child(odd) {
-    border-color: #d3d3d3 white #d3d3d3 white;
-}
 
-.mytable tr td:nth-child(even) {
-    border-color: #BEBEBE white #BEBEBE white;
-}
-*/
-
-.mytable tr:nth-child(odd) td { /* makes default background color different for uhhhhhhhhhhhhhh errrrrrrrrrrrr each row */
+.mytable tr:nth-child(odd) td { /* makes default background color different for each row */
     background-color: #EBECF0;
 }
 
@@ -51,26 +64,34 @@ th {
     border-radius: 16px 0 0 16px;
 }
 
-#bannerTable {
-    overflow-x: scroll;
-    max-width: 93vw;
+.lastThing { /**/
+    border-radius: 0 16px 16px 0; /* Close circle */
 }
 
-#bannerTable tr td:last-child {
-    border-radius: 0 16px 16px 0;
+.z0.lastThing { /**/
+    border-radius: 16px; /* Close circle */
 }
 
-.lastThing {
-    border-radius: 0 16px 16px 0;
+#bannerTable tr td:last-child { /* Final table element */
+    border-radius: 0 16px 16px 0; /* Close circle */
 }
+
+#bannerTable tr td:last-child.z0 { /* Final table element and in banner  */
+    border-radius: 16px !important; /* Contained circle */
+}
+
+.bottomThingy {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    z-index: 1001;
+}
+
 
 .z0 { /* There might be a better way of doing this, lmao. */ 
     background-color: hsl(120, 100%, 50%) !important;
     border-radius: 16px 0 0 16px;
-}
-
-#bannerTable tr td:last-child.z0 {
-    border-radius: 16px !important;
 }
 
 .z1 {
