@@ -24,9 +24,9 @@ characters = characters.concat(char5Star);
 characters = characters.concat(char4Star)
 
 bannerNames = [ // I do not care about the actual names, noone knows them
-    "Venti 1","Klee 1","Tartaglia 1","Zhongli 1","Albedo 1","Ganyu 1","Xiao 1","Keqing","Hu Tao 1","Venti 2","Tartaglia 2","Zhongli 2",
-    "Eula 1","Klee 2","Kazuha 1","Ayaka 1","Yoimiya 1","Shogun 1","Kokomi 1","Tartaglia 3","Hu Tao 2","Albedo 2 & Eula 2","Itto 1",
-    "Shenhe 1 & Xiao 2", "Zhongli 3 & Ganyu 2"
+    "Venti","Klee","Tartaglia","Zhongli","Albedo","Ganyu","Xiao","Keqing","Hu Tao","Venti","Tartaglia","Zhongli",
+    "Eula","Klee","Kazuha","Ayaka","Yoimiya","Shogun","Kokomi","Tartaglia","Hu Tao","Albedo & Eula","Itto",
+    "Shenhe & Xiao", "Zhongli & Ganyu"
 ]
 
 banners = [
@@ -182,6 +182,12 @@ banners = [
     ]
 ]
 
+// Latest X are uncertain
+const UNCERTAIN_4_STAR_BANNERS = 0
+
+// Ignores above if characters name matches
+const CONFIRMED_4_STAR = "N"
+
 var charCount = {} // Character: num since
 
 for (i in characters) { // Init charcount
@@ -243,9 +249,7 @@ for (ii in banners) {
 
         // This part is for ?ing 4 stars we don't know
 
-        // i > 16 is all 4 star characters, if a 5 star is added add one
-        // ii is banner number
-        if (ii > 24 && i > 17 && character != "g") { // CHANGE WHEN CHARACTERS FOR next wishes are revealed please
+        if ((ii > banners.length - 1 - UNCERTAIN_4_STAR_BANNERS) && (i > char5Star.length) && (character != CONFIRMED_4_STAR)) {
             td.innerText = "?"
             td.className = ""
         }
