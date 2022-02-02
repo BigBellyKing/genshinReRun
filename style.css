@@ -34,7 +34,7 @@ th {
 }
 
 .mytable tr td, th {
-    height: 40px;
+    height: 33px;
     text-align: center;
     background-color: #EBECF0;
     border-color: white;

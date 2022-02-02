@@ -1,5 +1,19 @@
 // Satan possesses those who read this. Beware.
 
+const LEAKS = window.location.search.substring(1) == "leaks";
+
+if (LEAKS) {
+    document.getElementById("leakToggle").checked = true;
+}
+
+function toggleLeaks() {
+    if (LEAKS) {
+        window.location.search = "";
+    } else {
+        window.location.search = "leaks";
+    }
+}
+
 characters = [
     "",
 ]
@@ -8,7 +22,7 @@ char5Star = [
     "Albedo", "Itto", "Eula", "Ganyu", "Hu Tao",
     "Kazuha", "Ayaka", "Keqing", "Klee",
     "Shenhe", "Shogun", "Kokomi", "Tartaglia", "Venti",
-    "Xiao", "Yoimiya", "Zhongli",
+    "Xiao", "Yae Miko", "Yoimiya", "Zhongli",
 ]
 
 char4Star = [
@@ -26,7 +40,7 @@ characters = characters.concat(char4Star)
 bannerNames = [ // I do not care about the actual names, noone knows them
     "Venti","Klee","Tartaglia","Zhongli","Albedo","Ganyu","Xiao","Keqing","Hu Tao","Venti","Tartaglia","Zhongli",
     "Eula","Klee","Kazuha","Ayaka","Yoimiya","Shogun","Kokomi","Tartaglia","Hu Tao","Albedo & Eula","Itto",
-    "Shenhe & Xiao", "Zhongli & Ganyu"
+    "Shenhe & Xiao", "Zhongli & Ganyu", "Yae Miko"
 ]
 
 banners = [
@@ -179,18 +193,34 @@ banners = [
         "Xingqiu",
         "Beidou",
         "Yanfei"
+    ],
+    [
+        "Yae Miko",
+        "Fischl",
+        "Diona",
+        "Thoma"
     ]
 ]
 
 // Latest X are uncertain
-const UNCERTAIN_4_STAR_BANNERS = 0
+const UNCERTAIN_4_STAR_BANNERS = 0;
 
 // Ignores above if characters name matches
-const CONFIRMED_4_STAR = "N"
+const CONFIRMED_4_STAR = "N";
+
+// Chars that should only show while leaks are shown
+if (LEAKS) {
+    var LEAKED_CHARS = [];
+    var LEAKED_BANNERS = 0;
+} else {
+    var LEAKED_CHARS = ["Yae Miko"];
+    var LEAKED_BANNERS = 1;
+}
 
 var charCount = {} // Character: num since
 
 for (i in characters) { // Init charcount
+    if (LEAKED_CHARS.includes(characters[i])) {continue;}
     charCount[characters[i]] = -1;
 }
 
@@ -199,6 +229,9 @@ var table = document.getElementById("bannerTable")
 
 for (i in characters) {
     character = characters[i];
+
+    if (LEAKED_CHARS.includes(character)) {continue;}
+
     var tr = document.createElement("tr");
     tr.id = "char" + character.replaceAll(" ","_");
     if (i == 0) {
@@ -217,13 +250,19 @@ for (i in characters) {
 var tableChildren = table.childNodes; // Add banners
 
 for (ii in banners) {
+    if (ii >= (banners.length - LEAKED_BANNERS)) {continue}
+
     banner = banners[ii];
     var th = document.createElement("th");
     th.innerText = bannerNames[ii];
     tableChildren[0].appendChild(th);
+    var childN = 0;
     for (i in characters) {
         if (i == 0) {continue;}
         character = characters[i];
+
+        if (LEAKED_CHARS.includes(character)) {continue;}
+
         if (banner.includes(character)) {
             charCount[character] = 0;
         } else if (charCount[character] >= 0) {
@@ -254,7 +293,9 @@ for (ii in banners) {
             td.className = ""
         }
 
-        tableChildren[i].appendChild(td);
+        childN += 1;
+        console.log(i,childN,character)
+        tableChildren[childN].appendChild(td);
     }
 }
 
