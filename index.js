@@ -53,7 +53,7 @@ characters = characters.concat(char4Star)
 bannerNames = [ // I do not care about the actual names, noone knows them
     "Venti","Klee","Tartaglia","Zhongli","Albedo","Ganyu","Xiao","Keqing","Hu Tao","Venti","Tartaglia","Zhongli",
     "Eula","Klee","Kazuha","Ayaka","Yoimiya","Shogun","Kokomi","Tartaglia","Hu Tao","Albedo & Eula","Itto",
-    "Shenhe & Xiao", "Zhongli & Ganyu", "Yae Miko"
+    "Shenhe & Xiao", "Zhongli & Ganyu", "Yae Miko", "Raiden & Kokomi"
 ]
 
 banners = [
@@ -302,7 +302,7 @@ for (ii in banners) {
 
         childN += 1;
         console.log(i,childN,character)
-        tableChildren[childN].appendChild(td);
+        tableChildren[childN-1].appendChild(td);
     }
 }
 
