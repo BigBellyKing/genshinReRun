@@ -33,7 +33,7 @@ characters = [
 
 char5Star = [
     "Albedo", "Itto", "Eula", "Ganyu", "Hu Tao",
-    "Kazuha", "Ayaka", "Keqing", "Klee",
+    "Kazuha", "Ayaka", /*"Keqing",*/ "Klee",
     "Shenhe", "Shogun", "Kokomi", "Tartaglia", "Venti",
     "Xiao", "Yae Miko", "Yoimiya", "Zhongli",
 ]
