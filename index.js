@@ -2,6 +2,19 @@
 
 const LEAKS = window.location.search.substring(1) == "leaks";
 
+// Chars that should only show while leaks are shown
+var LEAKED_CHARS = [""];
+var LEAKED_BANNERS = 0;
+
+if (!LEAKED_BANNERS) {
+    document.getElementById("leakToggle").disabled = true;
+}
+
+if (!LEAKS) {
+    var LEAKED_CHARS = [""];
+    var LEAKED_BANNERS = 0;
+}
+
 if (LEAKS) {
     document.getElementById("leakToggle").checked = true;
 }
@@ -199,23 +212,17 @@ banners = [
         "Fischl",
         "Diona",
         "Thoma"
+    ],
+    [
+        "Shogun", "Kokomi",
     ]
 ]
 
 // Latest X are uncertain
-const UNCERTAIN_4_STAR_BANNERS = 0;
+var UNCERTAIN_4_STAR_BANNERS = 1
 
 // Ignores above if characters name matches
 const CONFIRMED_4_STAR = "N";
-
-// Chars that should only show while leaks are shown
-if (LEAKS) {
-    var LEAKED_CHARS = [];
-    var LEAKED_BANNERS = 0;
-} else {
-    var LEAKED_CHARS = ["Yae Miko"];
-    var LEAKED_BANNERS = 1;
-}
 
 var charCount = {} // Character: num since
 
