@@ -3,7 +3,7 @@
 const LEAKS = window.location.search.substring(1) == "leaks";
 
 // Chars that should only show while leaks are shown
-var LEAKED_CHARS = [""];
+var LEAKED_CHARS = [];
 var LEAKED_BANNERS = 0;
 
 if (!LEAKED_BANNERS) {
@@ -11,7 +11,7 @@ if (!LEAKED_BANNERS) {
 }
 
 if (!LEAKS) {
-    var LEAKED_CHARS = [""];
+    var LEAKED_CHARS = [];
     var LEAKED_BANNERS = 0;
 }
 
@@ -302,7 +302,7 @@ for (ii in banners) {
 
         childN += 1;
         console.log(i,childN,character)
-        tableChildren[childN-1].appendChild(td);
+        tableChildren[childN].appendChild(td);
     }
 }
 
