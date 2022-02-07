@@ -53,7 +53,7 @@ characters = characters.concat(char4Star)
 bannerNames = [ // I do not care about the actual names, noone knows them
     "Venti","Klee","Tartaglia","Zhongli","Albedo","Ganyu","Xiao","Keqing","Hu Tao","Venti","Tartaglia","Zhongli",
     "Eula","Klee","Kazuha","Ayaka","Yoimiya","Shogun","Kokomi","Tartaglia","Hu Tao","Albedo & Eula","Itto",
-    "Shenhe & Xiao", "Zhongli & Ganyu", "Yae Miko", "Raiden & Kokomi"
+    "Shenhe & Xiao", "Zhongli & Ganyu", "Yae Miko", "Shogun & Kokomi"
 ]
 
 banners = [
@@ -296,7 +296,7 @@ for (ii in banners) {
         // This part is for ?ing 4 stars we don't know
 
         if ((ii > banners.length - 1 - UNCERTAIN_4_STAR_BANNERS) && (i > char5Star.length) && (character != CONFIRMED_4_STAR)) {
-            td.innerText = "?"
+            td.innerText += "?"
             td.className = ""
         }
 
