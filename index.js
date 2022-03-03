@@ -215,6 +215,9 @@ banners = [
     ],
     [
         "Shogun", "Kokomi",
+        "Sara",
+        "Xinyan",
+        "Bennett"
     ]
 ]
 
