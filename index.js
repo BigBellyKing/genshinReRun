@@ -222,7 +222,7 @@ banners = [
 ]
 
 // Latest X are uncertain
-var UNCERTAIN_4_STAR_BANNERS = 1
+var UNCERTAIN_4_STAR_BANNERS = 0
 
 // Ignores above if characters name matches
 const CONFIRMED_4_STAR = "N";
