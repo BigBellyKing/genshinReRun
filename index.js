@@ -3,16 +3,19 @@
 const LEAKS = window.location.search.substring(1) == "leaks";
 
 // Chars that should only show while leaks are shown
-var LEAKED_CHARS = [];
-var LEAKED_BANNERS = 0;
+var LEAKED_CHARS = ["Ayato"];
+var LEAKED_BANNERS = 1;
+var LEAKED_UNCERTAIN = 1;
 
 if (!LEAKED_BANNERS) {
     document.getElementById("leakToggle").disabled = true;
 }
 
-if (!LEAKS) {
+if (LEAKS) {
     var LEAKED_CHARS = [];
     var LEAKED_BANNERS = 0;
+} else {
+    var LEAKED_UNCERTAIN = 0;
 }
 
 if (LEAKS) {
@@ -33,14 +36,13 @@ characters = [
 
 char5Star = [
     "Albedo", "Itto", "Eula", "Ganyu", "Hu Tao",
-    "Kazuha", "Ayaka", /*"Keqing",*/ "Klee",
+    "Kazuha", "Ayaka", "Ayato", /*"Keqing",*/ "Klee",
     "Shenhe", "Shogun", "Kokomi", "Tartaglia", "Venti",
     "Xiao", "Yae Miko", "Yoimiya", "Zhongli",
 ]
 
 char4Star = [
-    "Barbara", // <3
-    "Beidou", "Bennett", "Chongyun", 
+    "Barbara", "Beidou", "Bennett", "Chongyun", 
     "Diona", "Fischl", "Gorou", "Sara", "Ningguang",
     "Noelle", // <3
     "Razor", "Rosaria", "Sayu", "Sucrose", "Thoma", "Xiangling",
@@ -53,7 +55,7 @@ characters = characters.concat(char4Star)
 bannerNames = [ // I do not care about the actual names, noone knows them
     "Venti","Klee","Tartaglia","Zhongli","Albedo","Ganyu","Xiao","Keqing","Hu Tao","Venti","Tartaglia","Zhongli",
     "Eula","Klee","Kazuha","Ayaka","Yoimiya","Shogun","Kokomi","Tartaglia","Hu Tao","Albedo & Eula","Itto",
-    "Shenhe & Xiao", "Zhongli & Ganyu", "Yae Miko", "Shogun & Kokomi"
+    "Shenhe & Xiao", "Zhongli & Ganyu", "Yae Miko", "Shogun & Kokomi", "Ayato & Venti"
 ]
 
 banners = [
@@ -207,22 +209,25 @@ banners = [
         "Beidou",
         "Yanfei"
     ],
-    [
+    [ // 25
         "Yae Miko",
         "Fischl",
         "Diona",
         "Thoma"
     ],
-    [
+    [ // 26
         "Shogun", "Kokomi",
         "Sara",
         "Xinyan",
         "Bennett"
+    ],
+    [ // 27
+        "Ayato", "Venti",
     ]
 ]
 
 // Latest X are uncertain
-var UNCERTAIN_4_STAR_BANNERS = 0
+var UNCERTAIN_4_STAR_BANNERS = 0 + LEAKED_UNCERTAIN;
 
 // Ignores above if characters name matches
 const CONFIRMED_4_STAR = "N";
@@ -304,7 +309,6 @@ for (ii in banners) {
         }
 
         childN += 1;
-        console.log(i,childN,character)
         tableChildren[childN].appendChild(td);
     }
 }
@@ -320,7 +324,6 @@ var sortedCount = sortObjectEntries(charCount);
 function goThroughAllTheChars(fives=true) { // poor way of doing this :)
     for (i in sortedCount) {
         var character = sortedCount[i];
-        console.log(char5Star.includes(character) && fives,character)
         if (char5Star.includes(character) && fives || char4Star.includes(character) && !fives) {
             character = character.replaceAll(" ","_");
             ctable.appendChild(ctable.querySelector("#char" + character));
