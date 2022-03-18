@@ -3,19 +3,19 @@
 const LEAKS = window.location.search.substring(1) == "leaks";
 
 // Chars that should only show while leaks are shown
-var LEAKED_CHARS = ["Ayato"];
-var LEAKED_BANNERS = 1;
-var LEAKED_UNCERTAIN = 1;
+var LEAKED_CHARS = [];
+var LEAKED_BANNERS = 0;
+var LEAKED_UNCERTAIN = 0;
 
 if (!LEAKED_BANNERS) {
     document.getElementById("leakToggle").disabled = true;
 }
 
 if (LEAKS) {
-    var LEAKED_CHARS = [];
+    var LEAKED_CHARS = []; // These two contain stuff that is hidden so when leaks are on just don't hide stuff 
     var LEAKED_BANNERS = 0;
 } else {
-    var LEAKED_UNCERTAIN = 0;
+    var LEAKED_UNCERTAIN = 0; // However, this one is added to the normal uncertain var which means it shouldn't be set if we aren't showing leaks
 }
 
 if (LEAKS) {
@@ -50,13 +50,15 @@ char4Star = [
 ]
 
 characters = characters.concat(char5Star);
-characters = characters.concat(char4Star)
+characters = characters.concat(char4Star);
 
 bannerNames = [ // I do not care about the actual names, noone knows them
     "Venti","Klee","Tartaglia","Zhongli","Albedo","Ganyu","Xiao","Keqing","Hu Tao","Venti","Tartaglia","Zhongli",
     "Eula","Klee","Kazuha","Ayaka","Yoimiya","Shogun","Kokomi","Tartaglia","Hu Tao","Albedo & Eula","Itto",
-    "Shenhe & Xiao", "Zhongli & Ganyu", "Yae Miko", "Shogun & Kokomi", "Ayato & Venti"
+    "Shenhe & Xiao", "Zhongli & Ganyu", "Yae Miko", "Shogun & Kokomi", "Ayato & Venti", "Ayaka"
 ]
+
+var UNCERTAIN_4_STAR_BANNERS = 2
 
 banners = [
     [ // 0
@@ -223,11 +225,14 @@ banners = [
     ],
     [ // 27
         "Ayato", "Venti",
-    ]
+    ],
+    [ // 28
+        "Ayaka"
+    ],
 ]
 
 // Latest X are uncertain
-var UNCERTAIN_4_STAR_BANNERS = 0 + LEAKED_UNCERTAIN;
+var UNCERTAIN_4_STAR_BANNERS = UNCERTAIN_4_STAR_BANNERS + LEAKED_UNCERTAIN;
 
 // Ignores above if characters name matches
 const CONFIRMED_4_STAR = "N";
