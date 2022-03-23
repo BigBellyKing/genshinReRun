@@ -5,9 +5,9 @@ const LEAKS = window.location.search.substring(1) == "leaks";
 // Chars that should only show while leaks are shown
 var LEAKED_CHARS = [];
 var LEAKED_BANNERS = 0;
-var LEAKED_UNCERTAIN = 0;
+var LEAKED_UNCERTAIN = -1;
 
-if (!LEAKED_BANNERS) {
+if (!LEAKED_BANNERS && !LEAKED_UNCERTAIN) {
     document.getElementById("leakToggle").disabled = true;
 }
 
@@ -225,6 +225,9 @@ banners = [
     ],
     [ // 27
         "Ayato", "Venti",
+        "Yun Jin",
+        "Sucrose",
+        "Xiangling"
     ],
     [ // 28
         "Ayaka"
@@ -272,6 +275,9 @@ var tableChildren = table.childNodes; // Add banners
 for (ii in banners) {
     if (ii >= (banners.length - LEAKED_BANNERS)) {continue}
 
+    var uncertainbanner = Boolean(ii > banners.length - 1 - UNCERTAIN_4_STAR_BANNERS)
+    var uncertainbannerup = Boolean(ii+1 > banners.length - 1 - UNCERTAIN_4_STAR_BANNERS)
+
     banner = banners[ii];
     var th = document.createElement("th");
     th.innerText = bannerNames[ii];
@@ -283,7 +289,7 @@ for (ii in banners) {
 
         if (LEAKED_CHARS.includes(character)) {continue;}
 
-        if (banner.includes(character)) {
+        if (banner.includes(character) && (!uncertainbanner || char5Star.includes(character))) {
             charCount[character] = 0;
         } else if (charCount[character] >= 0) {
             charCount[character] += 1;
@@ -291,7 +297,7 @@ for (ii in banners) {
         var td = document.createElement("td");
         td.className = "z" + charCount[character];
         if (banners.length != Number(ii)+1) {
-            if (banners[Number(ii)+1].includes(character)) {
+            if (banners[Number(ii)+1].includes(character) && (!uncertainbannerup || char5Star.includes(character))) {
                 td.classList.add("lastThing");
             }
         }
@@ -308,7 +314,7 @@ for (ii in banners) {
 
         // This part is for ?ing 4 stars we don't know
 
-        if ((ii > banners.length - 1 - UNCERTAIN_4_STAR_BANNERS) && (i > char5Star.length) && (character != CONFIRMED_4_STAR)) {
+        if (uncertainbanner && (i > char5Star.length) && (character != CONFIRMED_4_STAR)) {
             td.innerText += "?"
             td.className = ""
         }
