@@ -5,7 +5,7 @@ const LEAKS = window.location.search.substring(1) == "leaks";
 // Chars that should only show while leaks are shown
 var LEAKED_CHARS = [];
 var LEAKED_BANNERS = 0;
-var LEAKED_UNCERTAIN = -1;
+var LEAKED_UNCERTAIN = 0;
 
 if (!LEAKED_BANNERS && !LEAKED_UNCERTAIN) {
     document.getElementById("leakToggle").disabled = true;
@@ -58,7 +58,7 @@ bannerNames = [ // I do not care about the actual names, noone knows them
     "Shenhe & Xiao", "Zhongli & Ganyu", "Yae Miko", "Shogun & Kokomi", "Ayato & Venti", "Ayaka"
 ]
 
-var UNCERTAIN_4_STAR_BANNERS = 2
+var UNCERTAIN_4_STAR_BANNERS = 1
 
 banners = [
     [ // 0
