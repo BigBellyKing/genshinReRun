@@ -273,6 +273,7 @@ for (i in characters) {
 var tableChildren = table.childNodes; // Add banners
 
 for (ii in banners) {
+    ii = Number(ii)
     if (ii >= (banners.length - LEAKED_BANNERS)) {continue}
 
     var uncertainbanner = Boolean(ii > banners.length - 1 - UNCERTAIN_4_STAR_BANNERS)
@@ -296,8 +297,8 @@ for (ii in banners) {
         }
         var td = document.createElement("td");
         td.className = "z" + charCount[character];
-        if (banners.length != Number(ii)+1) {
-            if (banners[Number(ii)+1].includes(character) && (!uncertainbannerup || char5Star.includes(character))) {
+        if (banners.length != ii+1) {
+            if (banners[ii+1].includes(character) && (!uncertainbannerup || char5Star.includes(character))) {
                 td.classList.add("lastThing");
             }
         }
