@@ -230,7 +230,7 @@ banners = [
         "Xiangling"
     ],
     [ // 28
-        "Ayaka".
+        "Ayaka",
         "Razor",
         "Sayu",
         "Rosaria"
