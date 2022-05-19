@@ -3,9 +3,9 @@
 const LEAKS = window.location.search.substring(1) == "leaks";
 
 // Chars that should only show while leaks are shown
-var LEAKED_CHARS = [];
-var LEAKED_BANNERS = 0;
-var LEAKED_UNCERTAIN = 0;
+var LEAKED_CHARS = ["Yelan", "Kuki Shinobu"];
+var LEAKED_BANNERS = 2;
+var LEAKED_UNCERTAIN = 1;
 
 if (!LEAKED_BANNERS && !LEAKED_UNCERTAIN) {
     document.getElementById("leakToggle").disabled = true;
@@ -38,12 +38,12 @@ char5Star = [
     "Albedo", "Itto", "Eula", "Ganyu", "Hu Tao",
     "Kazuha", "Ayaka", "Ayato", /*"Keqing",*/ "Klee",
     "Shenhe", "Shogun", "Kokomi", "Tartaglia", "Venti",
-    "Xiao", "Yae Miko", "Yoimiya", "Zhongli",
+    "Xiao", "Yae Miko", "Yelan", "Yoimiya", "Zhongli",
 ]
 
 char4Star = [
     "Barbara", "Beidou", "Bennett", "Chongyun", 
-    "Diona", "Fischl", "Gorou", "Sara", "Ningguang",
+    "Diona", "Fischl", "Gorou", "Kuki Shinobu", "Sara", "Ningguang",
     "Noelle", // <3
     "Razor", "Rosaria", "Sayu", "Sucrose", "Thoma", "Xiangling",
     "Xingqiu", "Xinyan", "Yanfei", "Yun Jin"
@@ -55,7 +55,7 @@ characters = characters.concat(char4Star);
 bannerNames = [ // I do not care about the actual names, noone knows them
     "Venti","Klee","Tartaglia","Zhongli","Albedo","Ganyu","Xiao","Keqing","Hu Tao","Venti","Tartaglia","Zhongli",
     "Eula","Klee","Kazuha","Ayaka","Yoimiya","Shogun","Kokomi","Tartaglia","Hu Tao","Albedo & Eula","Itto",
-    "Shenhe & Xiao", "Zhongli & Ganyu", "Yae Miko", "Shogun & Kokomi", "Ayato & Venti", "Ayaka"
+    "Shenhe & Xiao", "Zhongli & Ganyu", "Yae Miko", "Shogun & Kokomi", "Ayato & Venti", "Ayaka", "Yelan & Xiao", "Itto"
 ]
 
 var UNCERTAIN_4_STAR_BANNERS = 0
@@ -235,13 +235,23 @@ banners = [
         "Sayu",
         "Rosaria"
     ],
+    [ // 29
+        "Yelan", "Xiao",
+        "Barbara",
+        "Yanfei",
+        "Noelle"
+    ],
+    [ // 30
+        "Itto",
+        "Kuki Shinobu"
+    ],
 ]
 
 // Latest X are uncertain
 var UNCERTAIN_4_STAR_BANNERS = UNCERTAIN_4_STAR_BANNERS + LEAKED_UNCERTAIN;
 
 // Ignores above if characters name matches
-const CONFIRMED_4_STAR = "N";
+const CONFIRMED_4_STAR = "Kuki Shinobu";
 
 var charCount = {} // Character: num since
 
