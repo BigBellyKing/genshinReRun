@@ -3,9 +3,9 @@
 const LEAKS = window.location.search.substring(1) == "leaks";
 
 // Chars that should only show while leaks are shown
-var LEAKED_CHARS = ["Yelan", "Kuki Shinobu"];
-var LEAKED_BANNERS = 2;
-var LEAKED_UNCERTAIN = 1;
+var LEAKED_CHARS = [];
+var LEAKED_BANNERS = 0;
+var LEAKED_UNCERTAIN = 0;
 
 if (!LEAKED_BANNERS && !LEAKED_UNCERTAIN) {
     document.getElementById("leakToggle").disabled = true;
@@ -243,7 +243,9 @@ banners = [
     ],
     [ // 30
         "Itto",
-        "Kuki Shinobu"
+        "Kuki Shinobu",
+        "Gorou",
+        "Chongyun"
     ],
 ]
 
@@ -251,7 +253,7 @@ banners = [
 var UNCERTAIN_4_STAR_BANNERS = UNCERTAIN_4_STAR_BANNERS + LEAKED_UNCERTAIN;
 
 // Ignores above if characters name matches
-const CONFIRMED_4_STAR = "Kuki Shinobu";
+const CONFIRMED_4_STAR = "";
 
 var charCount = {} // Character: num since
 
