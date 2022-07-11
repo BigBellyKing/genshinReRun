@@ -43,7 +43,7 @@ char5Star = [
 
 char4Star = [
     "Barbara", "Beidou", "Bennett", "Chongyun", 
-    "Diona", "Fischl", "Gorou", "Kuki Shinobu", "Sara", "Ningguang",
+    "Diona", "Fischl", "Gorou", "Kuki Shinobu", "Sara", "Heizou", "Ningguang",
     "Noelle", // <3
     "Razor", "Rosaria", "Sayu", "Sucrose", "Thoma", "Xiangling",
     "Xingqiu", "Xinyan", "Yanfei", "Yun Jin"
@@ -55,10 +55,11 @@ characters = characters.concat(char4Star);
 bannerNames = [ // I do not care about the actual names, noone knows them
     "Venti","Klee","Tartaglia","Zhongli","Albedo","Ganyu","Xiao","Keqing","Hu Tao","Venti","Tartaglia","Zhongli",
     "Eula","Klee","Kazuha","Ayaka","Yoimiya","Shogun","Kokomi","Tartaglia","Hu Tao","Albedo & Eula","Itto",
-    "Shenhe & Xiao", "Zhongli & Ganyu", "Yae Miko", "Shogun & Kokomi", "Ayato & Venti", "Ayaka", "Yelan & Xiao", "Itto"
+    "Shenhe & Xiao", "Zhongli & Ganyu", "Yae Miko", "Shogun & Kokomi", "Ayato & Venti", "Ayaka", "Yelan & Xiao",
+    "Itto", "Kazuha & Klee", "Yoimiya"
 ]
 
-var UNCERTAIN_4_STAR_BANNERS = 0
+var UNCERTAIN_4_STAR_BANNERS = 1
 
 banners = [
     [ // 0
@@ -246,6 +247,16 @@ banners = [
         "Kuki Shinobu",
         "Gorou",
         "Chongyun"
+    ],
+    [ // 31
+        "Kazuha", "Klee",
+        "Heizou",
+        "Thoma",
+        "Ningguang"
+    ],
+    [ // 32
+        "Yoimiya",
+
     ],
 ]
 
