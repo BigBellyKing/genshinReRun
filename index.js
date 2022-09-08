@@ -60,7 +60,7 @@ bannerNames = [ // I do not care about the actual names, noone knows them
     "Itto", "Kazuha & Klee", "Yoimiya", "Tighnari & Zhongli", "Ganyu & Kokomi"
 ]
 
-var UNCERTAIN_4_STAR_BANNERS = 1
+var UNCERTAIN_4_STAR_BANNERS = 0
 
 banners = [
     [ // 0
@@ -270,7 +270,7 @@ banners = [
     [ // 34
 	"Kokomi", "Ganyu",
 	"Sucrose",
-	"Xingqui",
+	"Xingqiu",
 	"Dori"
     ]
 ]
