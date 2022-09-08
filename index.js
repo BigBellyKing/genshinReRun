@@ -39,12 +39,13 @@ char5Star = [
     "Kazuha", "Ayaka", "Ayato", /*"Keqing",*/ "Klee",
     "Shenhe", "Shogun", "Kokomi", "Tartaglia", "Venti",
     "Xiao", "Yae Miko", "Yelan", "Yoimiya", "Zhongli",
+    "Tighnari"
 ]
 
 char4Star = [
-    "Barbara", "Beidou", "Bennett", "Chongyun", 
-    "Diona", "Fischl", "Gorou", "Kuki Shinobu", "Sara", "Heizou", "Ningguang",
-    "Noelle", // <3
+    "Barbara", "Beidou", "Bennett", "Chongyun", "Collei",
+    "Diona", "Dori", "Fischl", "Gorou", "Kuki Shinobu", "Sara", "Heizou", 
+    "Ningguang", "Noelle", // <3
     "Razor", "Rosaria", "Sayu", "Sucrose", "Thoma", "Xiangling",
     "Xingqiu", "Xinyan", "Yanfei", "Yun Jin"
 ]
@@ -56,7 +57,7 @@ bannerNames = [ // I do not care about the actual names, noone knows them
     "Venti","Klee","Tartaglia","Zhongli","Albedo","Ganyu","Xiao","Keqing","Hu Tao","Venti","Tartaglia","Zhongli",
     "Eula","Klee","Kazuha","Ayaka","Yoimiya","Shogun","Kokomi","Tartaglia","Hu Tao","Albedo & Eula","Itto",
     "Shenhe & Xiao", "Zhongli & Ganyu", "Yae Miko", "Shogun & Kokomi", "Ayato & Venti", "Ayaka", "Yelan & Xiao",
-    "Itto", "Kazuha & Klee", "Yoimiya"
+    "Itto", "Kazuha & Klee", "Yoimiya", "Tighnari & Zhongli", "Ganyu & Kokomi"
 ]
 
 var UNCERTAIN_4_STAR_BANNERS = 1
@@ -256,8 +257,22 @@ banners = [
     ],
     [ // 32
         "Yoimiya",
-
+        "Bennett",
+        "Xinyan",
+        "Yun Jin"
     ],
+    [ // 33
+        "Tighnari", "Zhongli",
+        "Collei",
+        "Diona",
+        "Fischl"
+    ],
+    [ // 34
+	"Kokomi", "Ganyu",
+	"Sucrose",
+	"Xingqui",
+	"Dori"
+    ]
 ]
 
 // Latest X are uncertain
