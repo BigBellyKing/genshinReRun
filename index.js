@@ -3,9 +3,9 @@
 const LEAKS = window.location.search.substring(1) == "leaks";
 
 // Chars that should only show while leaks are shown
-var LEAKED_CHARS = [];
-var LEAKED_BANNERS = 0;
-var LEAKED_UNCERTAIN = 0;
+var LEAKED_CHARS = ["Cyno","Nilou","Candace"];
+var LEAKED_BANNERS = 2;
+var LEAKED_UNCERTAIN = 1;
 
 if (!LEAKED_BANNERS && !LEAKED_UNCERTAIN) {
     document.getElementById("leakToggle").disabled = true;
@@ -39,11 +39,11 @@ char5Star = [
     "Kazuha", "Ayaka", "Ayato", /*"Keqing",*/ "Klee",
     "Shenhe", "Shogun", "Kokomi", "Tartaglia", "Venti",
     "Xiao", "Yae Miko", "Yelan", "Yoimiya", "Zhongli",
-    "Tighnari"
+    "Tighnari", "Cyno", "Nilou"
 ]
 
 char4Star = [
-    "Barbara", "Beidou", "Bennett", "Chongyun", "Collei",
+    "Barbara", "Beidou", "Bennett", "Candace", "Chongyun", "Collei", 
     "Diona", "Dori", "Fischl", "Gorou", "Kuki Shinobu", "Sara", "Heizou", 
     "Ningguang", "Noelle", // <3
     "Razor", "Rosaria", "Sayu", "Sucrose", "Thoma", "Xiangling",
@@ -57,7 +57,7 @@ bannerNames = [ // I do not care about the actual names, noone knows them
     "Venti","Klee","Tartaglia","Zhongli","Albedo","Ganyu","Xiao","Keqing","Hu Tao","Venti","Tartaglia","Zhongli",
     "Eula","Klee","Kazuha","Ayaka","Yoimiya","Shogun","Kokomi","Tartaglia","Hu Tao","Albedo & Eula","Itto",
     "Shenhe & Xiao", "Zhongli & Ganyu", "Yae Miko", "Shogun & Kokomi", "Ayato & Venti", "Ayaka", "Yelan & Xiao",
-    "Itto", "Kazuha & Klee", "Yoimiya", "Tighnari & Zhongli", "Ganyu & Kokomi"
+    "Itto", "Kazuha & Klee", "Yoimiya", "Tighnari & Zhongli", "Ganyu & Kokomi", "Cyno & Venti", "Nilou & Albedo"
 ]
 
 var UNCERTAIN_4_STAR_BANNERS = 0
@@ -272,6 +272,13 @@ banners = [
 	"Sucrose",
 	"Xingqiu",
 	"Dori"
+    ],
+    [ // 35
+	"Cyno", "Venti",
+	"Candace"
+    ],
+    [ // 36
+	"Nilou", "Albedo"
     ]
 ]
 
