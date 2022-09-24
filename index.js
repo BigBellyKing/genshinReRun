@@ -275,6 +275,8 @@ banners = [
     ],
     [ // 35
 	"Cyno", "Venti",
+	"Kuki Shinobu",
+	"Sayu",
 	"Candace"
     ],
     [ // 36
